@@ -79,46 +79,46 @@ const App= () => {
 
   return (
     <>
-      <div className="login row m-0 p-0 justify-content-center mt-5 mb-5 pt-5 pb-5">
-        <div className="col-12 col-md-5 p-5">
+      <div className="flex h-screen bg-gradient-to-r from-sky-500 to-indigo-500 shadow-lg"> 
+        <div className="w-1/2 md:w-1/2 p-7 shadow-lg rounded-lg">
           <form
             action="/user-Login"
             method="post"
             className="login-form"
             onSubmit={handleLogin}
           >
-            <h3 className="mb-3">Login</h3>
-            <div className="mb-3">
-              <label htmlFor="loginEmail" className="form-label">
+            <h3 className="mb-3 ml-5 p-6 text-center text-lg font-bold text-white">Login</h3>
+            <div className="mb-3 w-1/2">
+              <label htmlFor="loginEmail" className="form-label text-white">
                 Email address
               </label>
               <input
                 type="email"
-                className="form-control"
+                className="form-control bg-gray-200 w-full px-2 py-2 mt-2 rounded-md "
                 id="loginEmail"
                 name="loginEmail"
                 value={loginData.loginEmail}
                 onChange={handleLoginInputChange}
                 aria-describedby="loginEmailHelp"
               />
-              <div id="loginEmailHelp" className="form-text">
+              <div id="loginEmailHelp" className="form-text text-gray-200 mt-4">
                 We'll never share your email with anyone else.
               </div>
             </div>
-            <div className="mb-3">
-              <label htmlFor="loginPassword" className="form-label">
+            <div className="mb-3 w-1/2">
+              <label htmlFor="loginPassword" className="form-label text-white">
                 Password
               </label>
               <input
                 type="password"
-                className="form-control"
+                className="form-control bg-gray-200 w-full px-3 py-2 mt-2 rounded-md"
                 id="loginPassword"
                 name="loginPassword"
                 value={loginData.loginPassword}
                 onChange={handleLoginInputChange}
               />
             </div>
-            <div className="mb-3 form-check">
+            <div className="mb-3 flex items-center text-white">
               <input
                 type="checkbox"
                 className="form-check-input"
@@ -128,28 +128,28 @@ const App= () => {
                 Remember me
               </label>
             </div>
-            <div className="row m-0 p-0 justify-content-center">
-              <button type="submit" className="btn btn-primary text-dark w-auto ps-4 pe-4">
+            <div className="flex">
+              <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-4 rounded-md ">
                 Log in
               </button>
             </div>
           </form>
         </div>
-        <div className="col-12 col-md-5 p-5">
+        <div className="w-1/2 md:w-1/2 p-3 bg-red-500 shadow-md rounded-md">
           <form
             action="/user-Register"
             method="post"
             className="login-form"
             onSubmit={handleRegister}
           >
-            <h3 className="mb-3">Register</h3>
-            <div className="mb-3">
-              <label htmlFor="userName" className="form-label">
+            <h3 className="mb-3 text-white flex justify-center font-bold ">Signup</h3>
+            <div className="mb-3 w-1/2">
+              <label htmlFor="userName" className="form-label text-white font-semibold ml-5">
                 User Name
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control bg-gray-200 w-full mt-2 px-3 py-2 rounded-md ml-5"
                 id="userName"
                 name="userName"
                 value={registerData.userName}
@@ -157,13 +157,13 @@ const App= () => {
                 required
               />
             </div>
-            <div className="mb-3">
-              <label htmlFor="registerPhone" className="form-label">
+            <div className="mb-3 w-1/2">
+              <label htmlFor="registerPhone" className="form-label text-white font-semibold ml-5">
                 Phone
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control bg-gray-200 w-full mt-2 px-3 py-2 ml-5 rounded-md"
                 id="registerPhone"
                 name="registerPhone"
                 value={registerData.registerPhone}
@@ -171,13 +171,13 @@ const App= () => {
                 required
               />
             </div>
-            <div className="mb-3">
-              <label htmlFor="registerEmail" className="form-label">
+            <div className="mb-3 w-1/2">
+              <label htmlFor="registerEmail" className="form-label text-white font-semibold ml-5">
                 Email address
               </label>
               <input
                 type="email"
-                className="form-control"
+                className="form-control bg-gray-200 w-full mt-2 px-3 py-2 ml-5 rounded-md"
                 id="registerEmail"
                 name="registerEmail"
                 value={registerData.registerEmail}
@@ -185,17 +185,17 @@ const App= () => {
                 aria-describedby="registerEmailHelp"
                 required
               />
-              <div id="registerEmailHelp" className="form-text">
+              <div id="registerEmailHelp" className="form-text mt-2 text-white py-2 ml-5">
                 We'll never share your email with anyone else.
               </div>
             </div>
-            <div className="mb-3">
-              <label htmlFor="registerPassword" className="form-label">
+            <div className="mb-3 w-1/2">
+              <label htmlFor="registerPassword" className="form-label text-white font-semibold ml-5">
                 Password
               </label>
               <input
                 type="password"
-                className="form-control"
+                className="form-control bg-gray-200 w-full mt-2 px-3 py-2 ml-5 rounded-md "
                 id="registerPassword"
                 name="registerPassword"
                 value={registerData.registerPassword}
@@ -203,9 +203,19 @@ const App= () => {
                 required
               />
             </div>
-            <div className="row m-0 p-0">
-              <button type="submit" className="btn btn-primary text-dark w-auto ps-4 pe-4">
-                Register
+            <div className="mb-3 flex items-center text-white ml-5">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="rememberMe"
+              />
+              <label className="form-check-label" htmlFor="rememberMe">
+                Remember me
+              </label>
+            </div>
+            <div className="mb-3">
+              <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white px-3 py-2 mt-4 font-semibold rounded-md ml-5">
+                Signup
               </button>
             </div>
           </form>
